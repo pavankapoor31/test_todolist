@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500;700&display=swap');
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 *{
   color: black;
@@ -48,6 +48,20 @@
 .TodoHeading,
 .AddTodos{
   margin-left: 5px;
+}
+#todoDesc{
+  height: 140px;
+  width: 270px;
+  word-wrap: break-word;
+  text-align: left;
+  text-justify:auto;
+}
+#todoTitle{
+
+  /* border: 2px solid black; */
+  height: 25px;
+  width: 270px
+  
 }
 
 /* TODO  */
@@ -97,5 +111,5 @@
   color: rgb(249, 61, 61);
 }
 .text-center{
-  width: fit-content;
+  /* width: fit-content; */
 }
