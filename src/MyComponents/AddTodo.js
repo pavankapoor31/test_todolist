@@ -21,9 +21,10 @@ export default function AddTodo(props) {
     tempDesc=Desc.trim();
     let flag = 0;
     const validateTitle = (e) => {
+        
         let letters = /^[A-Za-z0-9' '\'/-]+$/;
         //Checks if given title is empty
-        if (tempTitle.length==0) {
+        if (Title.length< 0) {
             flag = 1;
             Errors.blankTitle = "Title Cannot be blank/Single digit :)";
             // alert("Title/Description cannot be blank/single digit");
@@ -80,12 +81,17 @@ export default function AddTodo(props) {
                 }
             }
         }
+
+        const onChangeTitle = (e) => {
+            setTitle(e.target.value);
+            validateTitle(e.target.value)
+        }
     
     return (
         <div className="AddTodos">
             <form action="">
                 <label htmlFor="todoTitle"> <h3> Title : </h3></label>
-                <input type="text" value={Title} onChange={(e) => { setTitle(e.target.value);validateTitle(e.target.value) }} id="todoTitle" name="todoTitle" />
+                <input type="text"  defaultValue={Title}  onChange= {onChangeTitle} id="todoTitle" name="todoTitle" />
                 <h4 className="addTodoError"> {Error.numericTitle}</h4>
                 <label htmlFor="todoDesc"> <h3>Description : </h3> </label>
                 <textarea cols="30" rows="10" onChange={(e) => {setDesc(e.target.value);validateDesc(e.target.value)}} id="todoDesc" name="todoDesc" placeholder="Work on .....">
